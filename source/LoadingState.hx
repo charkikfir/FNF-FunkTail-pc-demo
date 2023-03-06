@@ -65,11 +65,11 @@ class LoadingState extends MusicBeatState
 			{
 				callbacks = new MultiCallback(onLoad);
 				var introComplete = callbacks.add("introComplete");
-				/*if (PlayState.SONG != null) {
+				if (PlayState.SONG != null) {
 					checkLoadSong(getSongPath());
 					if (PlayState.SONG.needsVoices)
 						checkLoadSong(getVocalPath());
-				}*/
+				}
 				checkLibrary("shared");
 				if(directory != null && directory.length > 0 && directory != 'shared') {
 					checkLibrary(directory);
@@ -157,7 +157,6 @@ class LoadingState extends MusicBeatState
 		StageData.forceNextDirectory = null;
 
 		if(weekDir != null && weekDir.length > 0 && weekDir != '') directory = weekDir;
-
 		Paths.setCurrentLevel(directory);
 		trace('Setting asset folder to ' + directory);
 

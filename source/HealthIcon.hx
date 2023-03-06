@@ -11,6 +11,7 @@ class HealthIcon extends FlxSprite
 	private var isOldIcon:Bool = false;
 	private var isPlayer:Bool = false;
 	private var char:String = '';
+	public var left:Bool = false;
 
 	public function new(char:String = 'bf', isPlayer:Bool = false)
 	{
@@ -26,7 +27,10 @@ class HealthIcon extends FlxSprite
 		super.update(elapsed);
 
 		if (sprTracker != null)
-			setPosition(sprTracker.x + sprTracker.width + 12, sprTracker.y - 30);
+			if (left)
+				setPosition(sprTracker.x - 40, sprTracker.y - 30);
+			else
+				setPosition(sprTracker.x + sprTracker.width + 10, sprTracker.y - 30);
 	}
 
 	public function swapOldIcon() {
@@ -34,20 +38,17 @@ class HealthIcon extends FlxSprite
 		else changeIcon('bf');
 	}
 
-	private var iconOffsets:Array<Float> = [0, 0];
 	public function changeIcon(char:String) {
-		if(this.char != char) {
+		trace(this.char);
+		if (this.char == "")
+		{
+			trace("DidBarIcon");
 			var name:String = 'icons/' + char;
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-' + char; //Older versions of psych engine's support
 			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
 			var file:Dynamic = Paths.image(name);
 
-			loadGraphic(file); //Load stupidly first for getting the file size
-			loadGraphic(file, true, Math.floor(width / 2), Math.floor(height)); //Then load it fr
-			iconOffsets[0] = (width - 150) / 2;
-			iconOffsets[1] = (width - 150) / 2;
-			updateHitbox();
-
+			loadGraphic(file, true, 600, 150);
 			animation.add(char, [0, 1], 0, false, isPlayer);
 			animation.play(char);
 			this.char = char;
@@ -57,13 +58,23 @@ class HealthIcon extends FlxSprite
 				antialiasing = false;
 			}
 		}
-	}
+		else if(this.char != char) {
+			trace("DidNOTBarIcon");
+			var name:String = 'icons/' + char;
+			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-' + char; //Older versions of psych engine's support
+			if(!Paths.fileExists('images/' + name + '.png', IMAGE)) name = 'icons/icon-face'; //Prevents crash from missing icon
+			var file:Dynamic = Paths.image(name);
 
-	override function updateHitbox()
-	{
-		super.updateHitbox();
-		offset.x = iconOffsets[0];
-		offset.y = iconOffsets[1];
+			loadGraphic(file, true, 150, 150);
+			animation.add(char, [0, 1], 0, false, isPlayer);
+			animation.play(char);
+			this.char = char;
+
+			antialiasing = ClientPrefs.globalAntialiasing;
+			if(char.endsWith('-pixel')) {
+				antialiasing = false;
+			}
+		}
 	}
 
 	public function getCharacter():String {

@@ -30,22 +30,6 @@ class Highscore
 		setWeekScore(daWeek, 0);
 	}
 
-	public static function floorDecimal(value:Float, decimals:Int):Float
-	{
-		if(decimals < 1)
-		{
-			return Math.floor(value);
-		}
-
-		var tempMult:Float = 1;
-		for (i in 0...decimals)
-		{
-			tempMult *= 10;
-		}
-		var newValue:Float = Math.floor(value * tempMult);
-		return newValue / tempMult;
-	}
-
 	public static function saveScore(song:String, score:Int = 0, ?diff:Int = 0, ?rating:Float = -1):Void
 	{
 		var daSong:String = formatSong(song, diff);
@@ -83,14 +67,12 @@ class Highscore
 		// Reminder that I don't need to format this song, it should come formatted!
 		songScores.set(song, score);
 		FlxG.save.data.songScores = songScores;
-		FlxG.save.flush();
 	}
 	static function setWeekScore(week:String, score:Int):Void
 	{
 		// Reminder that I don't need to format this song, it should come formatted!
 		weekScores.set(week, score);
 		FlxG.save.data.weekScores = weekScores;
-		FlxG.save.flush();
 	}
 
 	static function setRating(song:String, rating:Float):Void
@@ -98,12 +80,11 @@ class Highscore
 		// Reminder that I don't need to format this song, it should come formatted!
 		songRating.set(song, rating);
 		FlxG.save.data.songRating = songRating;
-		FlxG.save.flush();
 	}
 
 	public static function formatSong(song:String, diff:Int):String
 	{
-		return Paths.formatToSongPath(song) + CoolUtil.getDifficultyFilePath(diff);
+		return Paths.formatToSongPath(song) + CoolUtil.difficultyStuff[diff][1];
 	}
 
 	public static function getScore(song:String, diff:Int):Int
