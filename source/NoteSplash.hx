@@ -33,7 +33,7 @@ class NoteSplash extends FlxSprite
 			texture = 'noteSplashes';
 			if(PlayState.SONG.splashSkin != null && PlayState.SONG.splashSkin.length > 0) texture = PlayState.SONG.splashSkin;
 		}
-		
+
 		if(textureLoaded != texture) {
 			loadAnims(texture);
 		}
@@ -44,31 +44,21 @@ class NoteSplash extends FlxSprite
 
 		var animNum:Int = FlxG.random.int(1, 2);
 		animation.play('note' + note + '-' + animNum, true);
-		animation.curAnim.frameRate = 24 + FlxG.random.int(-2, 2);
+		if(animation.curAnim != null)animation.curAnim.frameRate = 24 + FlxG.random.int(-2, 2);
 	}
 
-	public function setupHeart(x:Float, y:Float, note:Int = 0, texture:String = null, hueColor:Float = 0, satColor:Float = 0, brtColor:Float = 0) {
-		alpha = 1;
-		setPosition(x - Note.swagWidth * 0.95, y - Note.swagWidth);
-		loadAnims2(texture);
-		animation.play('soul', true);
-		offset.set(10, 10);
-	}
 	function loadAnims(skin:String) {
 		frames = Paths.getSparrowAtlas(skin);
 		for (i in 1...3) {
-			animation.addByPrefix("note1-" + i, "note splash blue 0", 24, false);
-			animation.addByPrefix("note2-" + i, "note splash green 0", 24, false);
-			animation.addByPrefix("note0-" + i, "note splash purple 0", 24, false);
-			animation.addByPrefix("note3-" + i, "note splash red 0", 24, false);
+			animation.addByPrefix("note1-" + i, "note splash blue " + i, 24, false);
+			animation.addByPrefix("note2-" + i, "note splash green " + i, 24, false);
+			animation.addByPrefix("note0-" + i, "note splash purple " + i, 24, false);
+			animation.addByPrefix("note3-" + i, "note splash red " + i, 24, false);
 		}
 	}
-	function loadAnims2(skin:String) {
-		frames = Paths.getSparrowAtlas(skin);
-		animation.addByPrefix("soul", "Soul ", 24, false);
-	}
+
 	override function update(elapsed:Float) {
-		if(animation.curAnim.finished && animation.curAnim.name != 'soul') kill();
+		if(animation.curAnim != null)if(animation.curAnim.finished) kill();
 
 		super.update(elapsed);
 	}
