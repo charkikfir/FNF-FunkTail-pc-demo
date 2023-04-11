@@ -43,7 +43,7 @@
 		},
 		{
 			"type": "interactNoaccept",
-			"name": "ruinsFinalDialogue",
+			"name": "floweyStartDialogue",
 			"completion": "none",
 			"width": 303,
 			"height": 8000,
@@ -51,14 +51,6 @@
 			"x": -600,
 			"y": 1741,
 			"alpha": 0.90
-		},
-		{
-			"type": "cutscene",
-			"name": "RPGFlowey",
-			"size": 1,
-			"x": 1420,
-			"y": 1845,
-			"alpha": 1
 		},
 		{
 			"type": "exit",
