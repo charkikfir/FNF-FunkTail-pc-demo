@@ -234,7 +234,7 @@ class RPGState extends MusicBeatState
 	}
 	public function goToNext():Void
 	{
-		RPGState.area = 'Fall';
+		RPGState.area = json.assets[0].next;
 		RPGState.enterLocation = "M";
 		MusicBeatState.switchState(new RPGState());
 	}
@@ -438,10 +438,10 @@ class RPGState extends MusicBeatState
 
 		//New RPGState
 
-		var file:String = Paths.json('rpg/stageData/Fall');
+		var file:String = Paths.json('rpg/stageData/' + area);
 		var rawJson = Assets.getText(file);
 		json = cast Json.parse(rawJson);
-				areaName = 'Fall';
+				areaName = json.assets[0].areaname;
 		sectionName = json.assets[0].sectionname;
 
 		trace(sectionName);
@@ -465,7 +465,7 @@ class RPGState extends MusicBeatState
 
 
 
-		bg = new FlxSprite(-80).loadGraphic(Paths.image('rpg/Fall'));
+		bg = new FlxSprite(-80).loadGraphic(Paths.image('rpg/' + json.assets[0].backgroundName));
 		bg.setGraphicSize(Std.int(bg.width));
 		bg.x = 0;
 		bg.y = 0;
@@ -672,7 +672,7 @@ class RPGState extends MusicBeatState
 		{
 			add(i);
 		}
-		RPGState.enterLocation = "Fall";
+		RPGState.enterLocation = "";
 		bg.updateHitbox();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		collisionList.push(bg);
