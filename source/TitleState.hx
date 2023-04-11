@@ -462,27 +462,15 @@ class TitleState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
                                         credTextShit.alpha(0);
-                                        case 2:
-					"doTweenAlpha", function("credTextShit", "credTextShit", 1, 1.5, "linear") {
-			var penisExam;Dynamic = tweenShit(tag, vars);
-			if(penisExam != null) {
-				PlayState.instance.modchartTweens.set(tag, FlxTween.tween(penisExam, {alpha: value}, duration, {ease: getFlxEaseByString(ease),
-					onComplete: function(twn:FlxTween) {
-						PlayState.instance.callOnLuas('onTweenCompleted', [tag]);
-						PlayState.instance.modchartTweens.remove(tag);
-					}
-				}));
-			} else {
-				luaTrace('doTweenAlpha: Couldnt find object: ' + vars, false, false, FlxColor.RED);
-			}
-		});
+                                 
+                                case 2:
+         
 				case 3:
 					createCoolText(['its out']);
 
 				// credTextShit.visible = true;
 				case 4:
 					addMoreText('what you all have been wating for');
-
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
 				case 5:
