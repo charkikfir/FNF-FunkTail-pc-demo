@@ -131,8 +131,8 @@ class RPGLoadingSaveState extends MusicBeatState
 	}
 
 	public static function reset1(){
-		FlxG.save.data.area1 = "Ruins1";
-		FlxG.save.data.areaName1 = "The Beginning";
+		FlxG.save.data.area1 = "Fall";
+		FlxG.save.data.areaName1 = "Fall";
 		FlxG.save.data.BFX1 = 1121;
 		FlxG.save.data.BFY1 = 1080;
 		FlxG.save.data.DB1 = false;
@@ -142,13 +142,13 @@ class RPGLoadingSaveState extends MusicBeatState
 		FlxG.save.data.DT1 = false;
 		FlxG.save.data.Spares1 = 0;
 		FlxG.save.data.Fights1 = 0;
-		FlxG.save.data.Ruins1 = false;
+		FlxG.save.data.Fall2 = false;
 		FlxG.save.flush();
 	}
 
 	public static function reset2(){
-		FlxG.save.data.area2 = "Ruins1";
-		FlxG.save.data.areaName2 = "The Beginning";
+		FlxG.save.data.area2 = "Fall";
+		FlxG.save.data.areaName2 = "Fall";
 		FlxG.save.data.BFX2 = 1121;
 		FlxG.save.data.BFY2 = 1080;
 		FlxG.save.data.DD2 = false;
@@ -158,13 +158,13 @@ class RPGLoadingSaveState extends MusicBeatState
 		FlxG.save.data.DT2 = false;
 		FlxG.save.data.Spares2 = 0;
 		FlxG.save.data.Fights2 = 0;
-		FlxG.save.data.Ruins2 = false;
+		FlxG.save.data.Fall2 = false;
 		FlxG.save.flush();
 	}
 
 	public static function reset3(){
-		FlxG.save.data.area3 = "Ruins1";
-		FlxG.save.data.areaName3 = "The Beginning";
+		FlxG.save.data.area3 = "Fall";
+		FlxG.save.data.areaName3 = "Fall";
 		FlxG.save.data.BFX3 = 1121;
 		FlxG.save.data.BFY3 = 1080;
 		FlxG.save.data.DD3 = false;
@@ -174,7 +174,7 @@ class RPGLoadingSaveState extends MusicBeatState
 		FlxG.save.data.DT3 = false;
 		FlxG.save.data.Spares3 = 0;
 		FlxG.save.data.Fights3 = 0;
-		FlxG.save.data.Ruins3 = false;
+		FlxG.save.data.Fall2 = false;
 		FlxG.save.flush();
 	}
 
