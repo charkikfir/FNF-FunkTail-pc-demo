@@ -395,7 +395,7 @@ class TitleState extends MusicBeatState
 		super.update(elapsed);
 	}
 
-	function createCoolText(textArray:Array<String>, ?offset:Float = 800)
+	function createCoolText(textArray:Array<String>, ?offset:Float = 0)
 	{
 		for (i in 0...textArray.length)
 		{
@@ -461,41 +461,44 @@ class TitleState extends MusicBeatState
 					//FlxG.sound.music.stop();
 					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
-				case 2:
+                                        case 2:
+					//FlxG.sound.music.stop();
+					FlxG.createCoolTextfadeIn(4, 0, 0.7);
+				case 3:
 					createCoolText(['its out']);
 
 				// credTextShit.visible = true;
-				case 3:
+				case 4:
 					addMoreText('what you all have been wating for');
 
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
-				case 4:
+				case 5:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
-				case 5:
+				case 6:
 					createCoolText(['the one', ' and only'], -40);
 
-				case 6:
+				case 7:
 					addMoreText('Friday');
 					credTextShit.visible = true;
 				// credTextShit.text += '\nNewgrounds';
-				case 7:
+				case 8:
 					addMoreText('Night');
 				// credTextShit.visible = true;
-				case 8:
+				case 9:
 					addMoreText('Funkin');
 				// credTextShit.text += '\nNight';
-				case 9:
+				case 10:
 					addMoreText('Vs'); // credTextShit.text += '\nFunkin';
 
-                                case 10:
+                                case 11:
 					addMoreText('Funktail'); // credTextShit.text += '\nFunkin';
 
-				case 11:
-					MusicBeatState.switchState(new RPGLoadingSaveState());
+				case 12:
+					MusicBeatState.switchState(new RPGState());
 			}
 		}
 	}
