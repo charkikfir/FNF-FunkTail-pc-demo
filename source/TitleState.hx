@@ -464,7 +464,7 @@ class TitleState extends MusicBeatState
                                         credTextShit.alpha(0);
                                         case 2:
 					"doTweenAlpha", function("credTextShit", "credTextShit", 1, 1.5, "linear") {
-			var penisExam:Dynamic = tweenShit(tag, vars);
+			var penisExam;Dynamic = tweenShit(tag, vars);
 			if(penisExam != null) {
 				PlayState.instance.modchartTweens.set(tag, FlxTween.tween(penisExam, {alpha: value}, duration, {ease: getFlxEaseByString(ease),
 					onComplete: function(twn:FlxTween) {
