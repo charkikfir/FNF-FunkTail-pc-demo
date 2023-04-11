@@ -480,7 +480,7 @@ class TitleState extends MusicBeatState
 
 				case 6:
 					addMoreText('Friday');
-					Spr.visible = true;
+					credTextShit.visible = true;
 				// credTextShit.text += '\nNewgrounds';
 				case 7:
 					addMoreText('Night');
