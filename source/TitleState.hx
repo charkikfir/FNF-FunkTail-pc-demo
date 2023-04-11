@@ -463,11 +463,11 @@ class TitleState extends MusicBeatState
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
 				case 2:
 					createCoolText(['its out']);
-					#end
+
 				// credTextShit.visible = true;
 				case 3:
 					addMoreText('what you all have been wating for');
-					#end
+
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
 				case 4:
@@ -477,7 +477,7 @@ class TitleState extends MusicBeatState
 				// credTextShit.screenCenter();
 				case 5:
 					createCoolText(['the one', ' and only'], -40);
-					#end
+
 				case 6:
 					addMoreText('Friday');
 					ngSpr.visible = true;
