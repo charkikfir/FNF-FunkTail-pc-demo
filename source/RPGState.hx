@@ -465,7 +465,7 @@ class RPGState extends MusicBeatState
 
 
 
-		bg = new FlxSprite(-80).loadGraphic(Paths.image('rpg/Fall');
+		bg = new FlxSprite(-80).loadGraphic(Paths.image('rpg/Fall'));
 		bg.setGraphicSize(Std.int(bg.width));
 		bg.x = 0;
 		bg.y = 0;
