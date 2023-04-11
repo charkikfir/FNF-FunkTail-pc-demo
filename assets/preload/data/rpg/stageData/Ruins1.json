@@ -3,8 +3,8 @@
 		{
 			"type": "data",
 			"backgroundName": "Fall",
-			"previous":	"",
-			"next": "ruins1",
+			"previous":  "Fall",
+			"next": "Ruins1",
 			"exitX": 1404,
 			"exitY": 1033,
 			"mainX": 1396,
