@@ -438,7 +438,7 @@ class RPGState extends MusicBeatState
 
 		//New RPGState
 
-		var file:String = Paths.json('rpg/stageData/' + area);
+		var file:String = Paths.json('rpg/stageData/Fall');
 		var rawJson = Assets.getText(file);
 		json = cast Json.parse(rawJson);
 				areaName = json.assets[0].areaname;
@@ -672,7 +672,7 @@ class RPGState extends MusicBeatState
 		{
 			add(i);
 		}
-		RPGState.enterLocation = "";
+		RPGState.enterLocation = "Fall";
 		bg.updateHitbox();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		collisionList.push(bg);
