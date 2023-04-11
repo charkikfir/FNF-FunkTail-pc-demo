@@ -462,42 +462,39 @@ class TitleState extends MusicBeatState
 					FlxG.sound.playMusic(Paths.music('freakyMenu'), 0);
 					FlxG.sound.music.fadeIn(4, 0, 0.7);
 				case 2:
-					#if PSYCH_WATERMARKS
-					createCoolText([''], 15);
-					#else
 					createCoolText(['its out']);
 					#end
 				// credTextShit.visible = true;
-				case 4:
+				case 3:
 					addMoreText('what you all have been wating for');
 					#end
 				// credTextShit.text += '\npresent...';
 				// credTextShit.addText();
-				case 5:
+				case 4:
 					deleteCoolText();
 				// credTextShit.visible = false;
 				// credTextShit.text = 'In association \nwith';
 				// credTextShit.screenCenter();
-				case 6:
+				case 5:
 					createCoolText(['the one', ' and only'], -40);
 					#end
-				case 8:
+				case 6:
 					addMoreText('Friday');
 					ngSpr.visible = true;
 				// credTextShit.text += '\nNewgrounds';
-				case 9:
+				case 7:
 					addMoreText('Night');
 				// credTextShit.visible = true;
-				case 10:
+				case 8:
 					addMoreText('Funkin');
 				// credTextShit.text += '\nNight';
-				case 11:
+				case 9:
 					addMoreText('Vs'); // credTextShit.text += '\nFunkin';
 
-                case 12:
+                                case 10:
 					addMoreText('Funktail'); // credTextShit.text += '\nFunkin';
 
-					case 13:
+				case 11:
 					MusicBeatState.switchState(new RPGLoadingSaveState());
 			}
 		}
