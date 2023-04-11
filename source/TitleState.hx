@@ -480,7 +480,7 @@ class TitleState extends MusicBeatState
 
 				case 6:
 					addMoreText('Friday');
-					ngSpr.visible = true;
+					Spr.visible = true;
 				// credTextShit.text += '\nNewgrounds';
 				case 7:
 					addMoreText('Night');
