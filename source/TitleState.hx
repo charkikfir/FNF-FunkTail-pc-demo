@@ -478,11 +478,11 @@ class TitleState extends MusicBeatState
 		addMoreText('Vs');
 	// credTextShit.visible = true;
 
-		case 13:
+		case 17:
 		addMoreText('Funktail');
 		// credTextShit.visible = true;
 
-				case 16:
+				case 18:
 					skipIntro();
 			}
 		}
