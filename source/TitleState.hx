@@ -394,6 +394,7 @@ class TitleState extends MusicBeatState
 		{
 			FlxG.fullscreen = !FlxG.fullscreen;
 		}
+}
 
 		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER || controls.ACCEPT;
 
