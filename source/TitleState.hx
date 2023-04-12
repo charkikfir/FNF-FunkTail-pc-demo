@@ -592,28 +592,28 @@ class TitleState extends MusicBeatState
 					deleteCoolText();
 					logoSpr.visible = false;
 				// credTextShit.visible = false;
-				case 13:
+				case 9:
 					addMoreText('the one');
 				// credTextShit.visible = true;
-				case 13:
+				case 10:
 					addMoreText('and only');
 				// credTextShit.visible = true;
-				case 13:
+				case 11:
 					addMoreText('Friday');
 				// credTextShit.visible = true;
-				case 14:
+				case 12:
 					addMoreText('Night');
 				// credTextShit.text += '\nNight';
-				case 15:
+				case 13:
 					addMoreText('Funkin'); // credTextShit.text += '\nFunkin';
-                case 16:
+                case 14:
 					addMoreText('Vs');
 				// credTextShit.visible = true;
-               case 17:
+               case 15:
 					addMoreText('Funktail');
 				// credTextShit.visible = true;
 
-				case 18:
+				case 16:
 					skipIntro();
 			}
 		}
