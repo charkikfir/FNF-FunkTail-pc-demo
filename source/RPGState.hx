@@ -221,10 +221,10 @@ class RPGState extends MusicBeatState
 		canInteract = true;
 		MusicBeatState.switchState(new OptionsState());
 	}
-	public function startGameRuins1():Void
+	public function startGameFall():Void
 	{
-		var name:String = "ruins1";
-		var poop = Highscore.formatSong("ruins1", 1);
+		var name:String = "Fall";
+		var poop = Highscore.formatSong("Fall", 1);
 
 		PlayState.SONG = Song.loadFromJson(poop, name);
 		PlayState.isStoryMode = false;
@@ -301,8 +301,8 @@ class RPGState extends MusicBeatState
 			if (action == "gotoOptions"){
 				doof.finishThing = endDiaOptions;
 			}
-			else if (action == "startGameRuins1"){
-				doof.finishThing = startGameRuins1;
+			else if (action == "startGameFall"){
+				doof.finishThing = startGameFall;
 			}
 			else if (action == "goToNext"){
 				doof.finishThing = goToNext;
@@ -482,7 +482,7 @@ class RPGState extends MusicBeatState
 		{
 			setupCharacter(overBF,json.assets[0].fourthX,json.assets[0].fourthY);
 		}
-		else if (enterLocation == "M" || area == "Ruins1")
+		else if (enterLocation == "M" || area == "Fall")
 		{
 			setupCharacter(overBF,json.assets[0].mainX,json.assets[0].mainY);
 		}
@@ -818,7 +818,7 @@ class RPGState extends MusicBeatState
 		else if (name == exit1)
 		{
 
-			if (RPGState.area == "Ruins10" && followToriel && loaded)
+			if (RPGState.area == "Fall0" && followToriel && loaded)
 			{
 				loaded = false;
 				var file:String = Paths.json('rpg/torielLeave'); 
